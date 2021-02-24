@@ -5,7 +5,7 @@
 
 - **Objectifs :** Mettre en place un chargement asynchrone des données.
 - **Prérequis :** Savoir analyser et rédiger.
-- **Public :** Débutants avec des notions de JavaScript et jQuery.
+- **Public :** Débutants avec des notions de JavaScript, jQuery et Git.
 
 ## Introduction
 AJAX (*Asynchonous JavaScript And XML*) n'est pas un langage de programmation mais plutôt une approche, une méthode, qui utilise un ensemble de technologies web. Une fois combinées ensemble avec une approche AJAX au sein d'une application, l'application pourra émettre des requêtes serveurs et mettre à jour l'interface utilisateurs rapidement sans forcer le rechargement de toute une page.
@@ -14,6 +14,20 @@ Ajax peut tout aussi bien fonctionner avec du json, du yaml etc...
 bla bla bla
 
 ## Pour commencer
+Cloner le dépôt du cours (celui-ci même) avec la commande :
+
+```shell
+git clone https://github.com/sqyqh/cours-ajax
+```
+
+Pour mettre à jour votre dossier, vous pouvez directement *pull* (tirer) les sources du dépôt d'origine vers votre copie locale avec la commande :
+
+```shell
+git pull
+```
+**Attention :** lancez la commande depuis le dossier de votre copie locale.
+
+
 
 ---
 
