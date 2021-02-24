@@ -8,10 +8,4 @@ $(document).ready(function(){
 	$("#button2").click(function(){
 		$("#myParagraph").load("load.html #loading" );
 	});
-
-
-
-<
-
-
 });
