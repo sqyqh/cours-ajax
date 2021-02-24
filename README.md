@@ -10,7 +10,14 @@
 ## Introduction
 AJAX (*Asynchonous JavaScript And XML*) n'est pas un langage de programmation mais plutôt une approche, une méthode, qui utilise un ensemble de technologies web. Une fois combinées ensemble avec une approche AJAX au sein d'une application, l'application pourra émettre des requêtes serveurs et mettre à jour l'interface utilisateurs rapidement sans forcer le rechargement de toute une page.
 
-## 
+Ajax peut tout aussi bien fonctionner avec du json, du yaml etc...
+
+## Pour commencer
+
+---
+
+## *Sources*
+[jQuery Ajax documentation](https://api.jquery.com/category/ajax/)
 
 
 
