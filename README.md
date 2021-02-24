@@ -14,6 +14,7 @@ Ajax peut tout aussi bien fonctionner avec du json, du yaml etc...
 bla bla bla
 
 ## Pour commencer
+### Installation du dépôt
 Pour cloner le dépôt du cours (celui-ci même) nous utilisons la commande :
 
 ```shell
@@ -25,6 +26,27 @@ Pour mettre à jour votre dossier, vous pouvez directement *pull* (tirer) les so
 ```shell
 git pull
 ```
+### Les méthodes jQuery Ajax
+#### Méthode load()
+La méthode *load()* permet de charger du contenu externe. Elle nécessite jusqu'à 3 paramètres : URL, data et callback.
+
+- **URL** spécifie l'adresse du contenu,
+- **data** (paramètre optionnel) spécifie un jeu de couples clés/valeurs à envoyer avec la requête,
+- **callback** (paramètre optionnel) spécifie le nom de la fonction que sera exécutée une fois que la méthode load() est complète.
+
+
+
+#### Méthodes get() et post()
+Les méthodes jQuery *get()* et *post()* sont utilisées pour demander des données du serveur avec un requête HTTP GET ou POST.
+
+- **GET** - requête de données depuis une ressource spécifiée
+- **POST** - envoi de données pour traitement depuis une ressource spécifiée
+
+
+
+
+
+
 **Attention :** lancez la commande depuis le dossier de votre copie locale.
 
 
@@ -33,6 +55,7 @@ git pull
 
 ## *Sources*
 [jQuery Ajax documentation](https://api.jquery.com/category/ajax/)
+[HTTP Methods](https://www.w3schools.com/tags/ref_httpmethods.asp)
 
 
 
