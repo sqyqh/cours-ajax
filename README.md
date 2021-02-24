@@ -14,7 +14,7 @@ Ajax peut tout aussi bien fonctionner avec du json, du yaml etc...
 bla bla bla
 
 ## Pour commencer
-Cloner le dépôt du cours (celui-ci même) avec la commande :
+Pour cloner le dépôt du cours (celui-ci même) nous utilisons la commande :
 
 ```shell
 git clone https://github.com/sqyqh/cours-ajax
