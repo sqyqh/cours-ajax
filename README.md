@@ -41,17 +41,15 @@ La méthode *load()* permet de charger du contenu externe. Elle nécessite jusqu
 - **callback** (paramètre optionnel) spécifie le nom de la fonction qui sera exécutée une fois que la méthode load() est complète.
 
 
-
-
-
-#### Méthodes get() et post()
-Les méthodes jQuery *get()* et *post()* sont utilisées pour demander des données du serveur avec un requête HTTP GET ou POST.
+#### Requêtes GET et POST
+Les méthodes jQuery *ajax()*, *get()* et *post()* sont utilisées pour demander des données du serveur avec un requête HTTP GET ou POST.
 
 - **GET** - requête de données depuis une ressource spécifiée
 - **POST** - envoi de données pour traitement depuis une ressource spécifiée
 
 
-Exemple de requête AJAX de type GET utilisant la méthode ajax() (([documentation](https://api.jquery.com/jquery.ajax/)))
+Exemple de requête AJAX de type GET utilisant la méthode *ajax()* ([documentation](https://api.jquery.com/jquery.ajax/)):
+
 ```JavaScript
 $.ajax({
 	type: "GET",
@@ -64,7 +62,7 @@ $.ajax({
 ```
 
 Dans ce code, il y a quatre paramètres/options :
-- **type :** c'est le type de la requête http qu'on souhaite envoyer. Dans notre exemple, on envoie donc une requête de type GET. Pour envoyuer une requête POST, il faut simplement le 'GET' en 'POST'.
+- **type :** c'est le type de la requête http qu'on souhaite envoyer. Dans notre exemple, on envoie donc une requête de type GET. Pour envoyer une requête POST, il faut simplement le 'GET' en 'POST'.
 - **url :** c'est l'URL à laquelle on envoie notre requête AJAX. Dans notre exemple, c'est "test.php". Vous pouvez changer cela par "autreTest.php" ou dans un dossier "monDossier/monAutreTest.php" ou n'importe quelle autre fichier php qui traitera la requête. Ne surtout pas oublier que cette adresse est relative à l'adresse page dans laquelle l'utilisateur se trouve.
 - **data** est un objet JavaScript qui contient les données qui seront envoyées avec notre requête. Dans notre exemple, nous envoyons avec notre requête une chaîne de caractères qui va s'ajouter à la chaîne la requête comme suit : **test.php?prenom=Philippe&nom=ROBERT&age=38**
 - **success :** c'est la fonction qui est appelée une fois que la requête est réussie. Cette fonction a pour paramètre *data* qui contient ce qui est retourné par *test.php*. Si par exemple, *test.php* imprime la chaîne de caractères "Super !", alors la variable *data* contiendra la chaîne "Super !".
@@ -83,6 +81,7 @@ $.ajax({
 ```
 
 Dans *envoi.php* on a par exemple :
+
 ```php
 $prenom = $_POST['prenom'];
 $nom = $_POST['nom'];
@@ -91,8 +90,37 @@ $age = $_POST['age'];
 
 Comme on le constate, **ces variables sont accessibles de la même manière qu'avec requêtes GET ou POST habituelles**.
 
-On peut modifier la fonction **success** pour notamment afficher un message à l'intérieur de la page concernée. En bref, modifier l'UI (*User Interface* soit Interface Utilisateur) pour que l'utilisateur ait une forte impression de réactivité.
+On peut modifier la fonction **success** pour notamment afficher un message à l'intérieur de la page concernée. En bref, modifier l'UI (*User Interface* soit Interface Utilisateur) pour que l'utilisateur ait une forte impression de réactivité et qu'il puisse lire un message qui lui indique que sa requête est bien validé.
 
+En plus de la méthode *ajax()* il existe aussi les méthodes *get()* et *post()* qui permettent la même chose mais avec une syntaxe différente. Si on reprend les exemples précédents on aura donc, pour les mêmes requêtes :
+
+Dans le cas de la méthode *get()*, la requête peut se faire comme suit :
+```JavaScript
+$.get("test.php",
+	{
+			prenom: 'Philippe',
+			nom: 'ROBERT',
+			age: 38		
+	},
+	function(response, status){
+		alert("Data: " + response + "\nStatus: " + status)
+	}
+)
+```
+
+Dans le cas de la méthode *post()*, la requête peut se faire comme suit :
+```JavaScript
+$.post("envoi.php",
+	{
+			prenom: 'Gérard',
+			nom: 'NOAS',
+			age: 55		
+	},
+	function(response, status){
+		alert("Data: " + response + "\nStatus: " + status)
+	}
+)
+```
 
 
 
@@ -111,8 +139,10 @@ On peut modifier la fonction **success** pour notamment afficher un message à l
 ---
 
 ## *Sources*
-[jQuery Ajax documentation](https://api.jquery.com/category/ajax/)
-[HTTP Methods](https://www.w3schools.com/tags/ref_httpmethods.asp)
+- [jQuery Ajax documentation](https://api.jquery.com/category/ajax/)
+- [HTTP Methods](https://www.w3schools.com/tags/ref_httpmethods.asp)
+- [JSON, article Wikipedia FR](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation)
+- [Learn jQuery Center : Ajax](https://learn.jquery.com/ajax/)
 
 
 
