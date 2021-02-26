@@ -1,0 +1,37 @@
+<html>
+    <head>
+			<meta charset="utf-8">
+			<title>Exemples AJAX / jQuery</title>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+				<h1> Exemple 3 :Connexion à l'API GitHub Search </h1>
+        <form>
+            <input type="text" placeholder="Votre recherche..." name="search" />
+        </form>
+        <ul id="results">
+        </ul>
+
+        <script>
+            $('[name="search"]').on('input', function(){
+                $.ajax({
+                    url:'https://api.github.com/search/repositories',
+                    type: 'get',
+                    dataType: 'json',
+										headers: {
+    									'User-Agent': 'sqyqh'
+  									},
+                    data: 'q='+encodeURI($(this).val())
+										success:
+                }).done(function(data){
+                    $('#results').html('');
+                    var items = data.items;
+                    items.forEach(function(el){
+                        $('#results').append($('<li>').text(el.full_name));
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

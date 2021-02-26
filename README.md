@@ -1,7 +1,7 @@
 # AJAX : *Asynchronous JavaScript And XML*
 *Par Sayah El Yatim ([@sqyqh](https://github.com/sqyqh "[Git](https://git-scm.com/)Hub - Sayah El Yatim")) sous licence [CC-by 4.0](LICENSE.md)*
 
-![Ajax, héro des temps jadis](assets/ajax.jpg "Ajax, héro des temps jadis")
+![Ajax, héro d'autrefois](assets/ajax.jpg "Ajax, héro des temps jadis")
 
 - **Objectifs :** Mettre en place un chargement asynchrone des données à l'aide de [jQuery](https://jquery.com/).
 - **Prérequis :** Savoir analyser et rédiger. Être capable de rechercher une information sur internet, [lire une documentation](https://en.wikipedia.org/wiki/RTFM) et la comprendre.
@@ -32,17 +32,10 @@ git pull
 
 **Attention :** lancez la commande depuis le dossier de votre copie locale.
 
-### Les méthodes [jQuery](https://jquery.com/) Ajax
-#### Méthode load()
-La méthode *load()* permet de charger du contenu externe. Elle nécessite jusqu'à 3 paramètres : URL, data et callback.
 
-- **URL** spécifie l'adresse du contenu,
-- **data** (paramètre optionnel) spécifie un jeu de couples clés/valeurs à envoyer avec la requête,
-- **callback** (paramètre optionnel) spécifie le nom de la fonction qui sera exécutée une fois que la méthode load() est complète.
-
-
-#### Requêtes HTTP GET et POST
-Les méthodes [jQuery](https://jquery.com/) *ajax()*, *get()* et *post()* sont utilisées pour demander des données du serveur avec un requête HTTP GET ou POST.
+## Les requêtes HTTP GET et POST
+### La méthode *ajax()*
+Les méthodes [jQuery](https://jquery.com/) *ajax()*, *get()* et *post()* sont utilisées pour demander des données du serveur avec une requête HTTP GET ou POST.
 
 - **GET** - requête de données depuis une ressource spécifiée
 - **POST** - envoi de données pour traitement depuis une ressource spécifiée
@@ -82,7 +75,7 @@ $.ajax({
 
 Dans *envoi.php* on a par exemple:
 
-```php
+```PHP
 $prenom = $_POST['prenom'];
 $nom = $_POST['nom'];
 $age = $_POST['age'];
@@ -90,8 +83,17 @@ $age = $_POST['age'];
 
 Comme on le constate, **ces variables sont accessibles de la même manière qu'avec des requêtes GET ou POST habituelles**.
 
-On peut modifier la fonction **success** pour notamment afficher un message à l'intérieur de la page concernée. En bref, modifier l'UI (*User Interface* soit Interface Utilisateur) pour que l'utilisateur ait une forte impression de réactivité et qu'il puisse lire le message lui indiquant la validation de sa demande.
+On peut modifier la fonction **success** pour notamment afficher un message à l'intérieur de la page concernée. En bref, modifier l'UI (*User Interface* soit l'Interface Utilisateur) pour que l'utilisateur ait une forte impression de réactivité et qu'il puisse lire le message lui indiquant la validation de sa demande.
 
+La réponse reçue est d'un type donnée (*dataType*) qui doit être spécifié pour le traitement. Même si Ajax peut deviner ce type (*Intelligent Guess*), il vaut mieux éviter tout implicit pour limiter les cas d'erreurs. Les types peuvent être par exemple : *xml*, *json*, *script*, ou *html*.
+
+On a donc, dans l'ordre :
+- Ajax qui fait un requête GET ou POST au serveur
+- Une réponse du serveur vers Ajax
+- Un traitement de la réponse par Ajax
+Le tout, de manière asynchrone et sans nécessiter de rechargement de page
+
+### Les méthodes *get()* et *post()*
 En plus de la méthode *ajax()* il existe aussi les méthodes *get()* et *post()* qui permettent la même chose mais avec une syntaxe plus concise. Si on reprend les exemples précédents on aura donc, pour les mêmes requêtes :
 
 Avec la méthode *get()* :
@@ -123,6 +125,21 @@ $.post("envoi.php",
 ```
 
 
+### La méthode load()
+La méthode *load()* permet de charger du contenu externe. Elle nécessite jusqu'à 3 paramètres : URL, data et callback.
+
+- **URL** spécifie l'adresse du contenu,
+- **data** (paramètre optionnel) spécifie un jeu de couples clés/valeurs à envoyer avec la requête,
+- **callback** (paramètre optionnel) spécifie le nom de la fonction qui sera exécutée une fois que la méthode load() est complète.
+
+
+## Connexion aux API REST
+
+
+
+
+
+
 
 
 ---
@@ -148,7 +165,7 @@ $.post("envoi.php",
 
 
 
-<!-- ```JavaScript
+```JavaScript
 <html>
     <head>
         <script type="text/javascript" src="jquery/jquery.js"></script>
@@ -177,4 +194,3 @@ $.post("envoi.php",
         </script>
     </body>
 </html>
-``` -->
